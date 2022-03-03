@@ -48,6 +48,6 @@
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
-    "vite": "^2.8.0"
+    "vite": "^2.8.6"
   }
 }
