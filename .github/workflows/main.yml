@@ -33,7 +33,7 @@ jobs:
       - name: Build
         run: pnpm build
       - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@4
+        uses: JamesIves/github-pages-deploy-action@v4.2.5
         if: ${{ github.event_name == 'push' && github.ref == 'refs/heads/main'}}
         with:
           branch: gh-pages
