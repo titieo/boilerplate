@@ -7,18 +7,18 @@
     "build": "NODE_ENV=production vite build",
     "build-dev": "build && vite preview",
     "dev": "NODE_ENV=development vite",
-    "format": "concurrently \"yarn:format:*\" && echo Please apply the diff",
-    "format:eslint": "echo Fixing Lint Issues With Eslint... && yarn eslint --ext .js --fix --quiet && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
+    "format": "concurrently \"pnpm:format:*\" && echo Please apply the diff",
+    "format:eslint": "echo Fixing Lint Issues With Eslint... && pnpm eslint --ext .js --fix --quiet && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
     "format:pkg": "format-package -w",
-    "format:prettier": "echo Fixing Lint Issues With Prettier... && yarn prettier -w . && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
+    "format:prettier": "echo Fixing Lint Issues With Prettier... && pnpm prettier -w . && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
     "format:stylelint": "echo Fixing Lint Issues With Stylelint... && stylelint src/css/**/*.css --fix && echo Fix generated successfully. || (echo Fix failed! && exit 1)",
-    "lint": "concurrently \"yarn:lint:*\"",
-    "lint:eslint": "echo Linting With Eslint... &&  yarn eslint --ext .js --quiet && echo Lint passed.|| (echo Lint failed && exit 1)",
-    "lint:prettier": "echo Linting With Prettier... && yarn prettier --check . && echo Lint passed. || (echo Lint failed && exit 1)",
+    "lint": "concurrently \"pnpm:lint:*\"",
+    "lint:eslint": "echo Linting With Eslint... &&  pnpm eslint --ext .js --quiet && echo Lint passed.|| (echo Lint failed && exit 1)",
+    "lint:prettier": "echo Linting With Prettier... && pnpm prettier --check . && echo Lint passed. || (echo Lint failed && exit 1)",
     "lint:stylelint": "echo Linting With Stylelint... && stylelint src/css/**/*.css && echo Lint passed. || (echo Lint failed && exit 1)",
-    "lintci": "concurrently \"yarn:lintci:*\" && echo Please apply the following diff using git apply && git diff",
-    "lintci:eslint": "echo Linting With Eslint... &&  yarn eslint --format github --ext .js --quiet && echo Lint passed. || (echo Lint failed, attempting fix... && yarn eslint --ext .js --fix --quiet && echo Fix generated successfully. || (echo Fix failed! && exit 1))",
-    "lintci:prettier": "echo Linting With Prettier... && yarn prettier --check . && echo Lint passed. || (echo Lint failed, attempting fix... && yarn prettier -w . && echo Fix generated successfully. || (echo Fix failed! && exit 1))",
+    "lintci": "concurrently \"pnpm:lintci:*\" && echo Please apply the following diff using git apply && git diff",
+    "lintci:eslint": "echo Linting With Eslint... &&  pnpm eslint --format github --ext .js --quiet && echo Lint passed. || (echo Lint failed, attempting fix... && pnpm eslint --ext .js --fix --quiet && echo Fix generated successfully. || (echo Fix failed! && exit 1))",
+    "lintci:prettier": "echo Linting With Prettier... && pnpm prettier --check . && echo Lint passed. || (echo Lint failed, attempting fix... && pnpm prettier -w . && echo Fix generated successfully. || (echo Fix failed! && exit 1))",
     "lintci:stylelint": "echo Linting With Stylelint... && stylelint src/css/**/*.css && echo Lint passed. || (echo Lint failed, attempting fix... && stylelint src/css/**/*.css --fix && echo Fix generated successfully. || (echo Fix failed! && exit 1))",
     "min": "node ./squoosh"
   },
@@ -30,6 +30,7 @@
   ],
   "devDependencies": {
     "@squoosh/lib": "^0.4.0",
+    "@vitejs/plugin-legacy": "^1.7.1",
     "autoprefixer": "^10.4.2",
     "concurrently": "^7.0.0",
     "cssnano": "^5.1.0",
@@ -48,6 +49,6 @@
     "stylelint-a11y": "^1.2.3",
     "stylelint-config-prettier": "^9.0.3",
     "stylelint-config-standard": "^25.0.0",
-    "vite": "^2.8.0"
+    "vite": "2"
   }
 }
