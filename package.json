@@ -41,7 +41,7 @@
 		"eslint-plugin-import": "^2.25.4",
 		"eslint-plugin-node": "^11.1.0",
 		"eslint-plugin-promise": "^6.0.0",
-		"format-package": "^6.1.0",
+		"format-package": "^7.0.0",
 		"postcss": "^8.4.7",
 		"postcss-preset-env": "^7.4.2",
 		"prettier": "2.5.1",
